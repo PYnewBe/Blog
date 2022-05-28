@@ -1,0 +1,15 @@
+{% block content %}
+
+     {% block flash_massage %}
+       {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul style="color: red; list-style-type: none; text-align: left; padding-inline-start: 0px;" class=flashes>
+    {% for category, message in messages %}
+      <li  class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+    {% endblock %}
+
+{% endblock %}
